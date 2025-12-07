@@ -95,7 +95,7 @@ crop_words <- function(image_path,
   # 7) Формирование путей с учётом next_idx
   n <- length(crops)
   idx_seq <- seq.int(from = 1, length.out = n)
-  paths <- sprintf(file.path(out_dir, paste0(id, "_%03d.png")), idx_seq)
+  paths <- sprintf(file.path(out_dir, paste0(id, "_%04d.png")), idx_seq)
   
   # 8) Защита от перезаписи, если overwrite = FALSE
   if (!overwrite) {
@@ -123,5 +123,6 @@ crop_words <- function(image_path,
 }
 
 # Пример использования:
-# res <- crop_words("path/to/image.png", out_dir = "words", lang = "rus", pad = 2)
+# res <- crop_words("path/to/image.png", id = 'Zon1', out_dir = "words")
+
 # View(res)
